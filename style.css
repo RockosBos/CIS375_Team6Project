@@ -1,3 +1,18 @@
 h3{
   color: red;
 }
+#OperationInstruction{
+    color: green;
+    float: left;
+    width: 50%;
+    display: inline;
+
+
+}
+#RelationshipInstruction{
+    color: blue;
+    float: right;
+    width: 50%;
+    display: inline;
+
+}
