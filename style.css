@@ -1,6 +1,7 @@
 h3{
   color: red;
 }
+/*This is the description of the operation section on the top left of main page*/
 #OperationInstruction{
     color: green;
     float: left;
@@ -9,6 +10,7 @@ h3{
 
 
 }
+/*This is for the description of the relationships field at top right of main page.*/
 #RelationshipInstruction{
     color: blue;
     float: right;
