@@ -23,7 +23,7 @@
         <input type="text" name="Input1">
         <input type="submit" text="Generate Test Cases">
     </form>
-
+    <script src="OperationClass.js"></script>
         <?php
           //this will be the beginning of the php for repeating and loading the operations and relationships into the operation array.
             echo $_GET ["Input1"];

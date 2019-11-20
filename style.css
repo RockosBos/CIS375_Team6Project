@@ -1,12 +1,17 @@
+h1{
+  text-align: center;
+
+}
 h3{
   color: red;
+  text-align: center;
 }
 /*This is the description of the operation section on the top left of main page*/
 #OperationInstruction{
     color: green;
     float: left;
     width: 50%;
-    display: inline;
+    
 
 
 }
@@ -15,6 +20,6 @@ h3{
     color: blue;
     float: right;
     width: 50%;
-    display: inline;
+    
 
 }
