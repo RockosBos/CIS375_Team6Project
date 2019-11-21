@@ -1,25 +1,61 @@
+body{
+  background-image: url("pictures/generic-website-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+ 
+  
+}
 h1{
   text-align: center;
+  font-weight: bold;
+  font-size: 50px;
 
 }
 h3{
   color: red;
   text-align: center;
+  font-weight: bold;
+  font: ariel;
+  font-size: 30px;
+}
+#Instructions{
+    font-size: 25px;
 }
 /*This is the description of the operation section on the top left of main page*/
 #OperationInstruction{
-    color: green;
+    color: darkblue;
     float: left;
-    width: 50%;
-    
+    width: 40%;
+    height: 50px;
+    font-size: 20px;
 
 
 }
 /*This is for the description of the relationships field at top right of main page.*/
 #RelationshipInstruction{
-    color: blue;
+    color: darkblue;
     float: right;
     width: 50%;
-    
-
+    Height: 50px;
+    font-size: 20px;
+}
+#OperationInput{
+  width: calc(49%);
+  height: 100px;
+  
+  
+}
+#RelationshipInput{
+  width: calc(49%);
+  height: 100px;
+  
+}
+#inputs{
+  background-color: lightblue;
+}
+#TestCaseButton{
+  font-weight: bold;
+  font-size: 25px;
+  
 }
