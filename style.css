@@ -1,9 +1,12 @@
+/*
+Purpose: This is the main CSS page for the website, 
+This is where all style elements for index.php will 
+be located.
+*/
 body{
   background-image: url("pictures/generic-website-background.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
-  
- 
   
 }
 h1{
@@ -57,5 +60,8 @@ h3{
 #TestCaseButton{
   font-weight: bold;
   font-size: 25px;
-  
+}
+#NewRowButton{
+  font-weight: bold;
+  font-size: 25px;
 }

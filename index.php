@@ -1,7 +1,17 @@
+<!-- 
+  ***********************************************************************************************************
+Test Case Generator
+Created By Nicholas Kessey, Walker Bass, Ryan Way, Colin McLaughlin
+Start Date: 11/17/2019
+Completion Date: 12/12/2019
+Purpose: This is the main index page, this is the home page in which all other pages will be expanded on from
+*************************************************************************************************************
+-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <script type="text/javascript" src="NewOperation.js"></script>
     <meta charset="utf-8">
     <title></title>
   </head>
@@ -24,14 +34,13 @@
         <input type="text" name="Input1" id="OperationInput">
         <input type="text" name="Input2" id="RelationshipInput">
       </div>
-      <input type="submit" text="Generate Test Cases" value="Generate Test Cases" id="TestCaseButton">
+      <button onclick="addRow()" id="AddRowButton">Add New Row</button>
+      <br>
+      <input type="submit" value="Generate Test Cases" id="TestCaseButton">
     </form>
-    <script src="OperationClass.js"></script>
-        <?php
-          //this will be the beginning of the php for repeating and loading the operations and relationships into the operation array.
-            echo $_GET ["Input1"];
-            echo $_GET ["Input2"];
-         ?>
 
+         <script src="OperationClass.js"></script>
+        <br><br>
+        <a href="index.php">Go To Test Page</a>
   </body>
 </html>

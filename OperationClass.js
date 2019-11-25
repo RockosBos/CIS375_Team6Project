@@ -1,3 +1,4 @@
+//This is the javascript file for the operation class all back end class development will be located here
 class Operation{
   constructor(id, name, relationships){
     this.operationID = id;
@@ -26,6 +27,7 @@ function createOperation(id, name, relationships){
       console.log(myOperation.getRelationshipLoc(i));
     }
 }
-let myArray = [1, 2, 3];
-console.log("Hi");
+var name = "<?php echo $Input1 ?>";
+myArray = [1,2,3]
+console.log(name);
 createOperation(1, "Nick", myArray);
