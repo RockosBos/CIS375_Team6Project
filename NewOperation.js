@@ -11,14 +11,20 @@ function addRow(){
     let col3 = row.insertCell(2);
 
     col1.innerHTML= i;
-    col2.innerHTML= "<input type='text' id='inputOp' name='inputOp'>";
-    col3.innerHTML= "<input type='text' id='inputRel' name='inputRel'>";
+    col2.innerHTML= "<input type='text' id='inputOp' name='inputOp' style='width: calc(100% - 3px)'>";
+    col3.innerHTML= "<input type='text' id='inputRel' name='inputRel' style='width: calc(100% - 3px)'>";
     
 
     console.log("Add new Row End");
 }
 function removeRow(){
     console.log("Remove Bottom Row Begin");
+
+    let table = document.getElementById("operationTable");
+    if(table.rows.length > 1){
+        table.deleteRow(-1);
+        i--;
+    }
 
     console.log("Remove Bottom Row End");
 }

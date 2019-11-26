@@ -10,7 +10,7 @@ Purpose: This will be a test HTML page, may be deleted once project is complete
   <script src= "DeleteFunction.js"></script>
 </head>
 <body>
-<a href="index.php">Back to main page</a>
+<a href="../index.php">Back to main page</a>
 <style>
 table, th, td {
     border: 1px solid black;

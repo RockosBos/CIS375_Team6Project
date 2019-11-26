@@ -38,32 +38,9 @@ td{
   border-collapse: collapse;
   background-color: white;
 }
-#Instructions{
-    font-size: 25px;
-}
-/*This is the description of the operation section on the top left of main page*/
-#OperationInstruction{
-    color: darkblue;
-    float: left;
-    width: 40%;
-    height: 50px;
-    font-size: 20px;
-
-
-}
-/*This is for the description of the relationships field at top right of main page.*/
-#RelationshipInstruction{
-    color: darkblue;
-    float: right;
-    width: 50%;
-    Height: 50px;
-    font-size: 20px;
-}
 #OperationInput{
   width: calc(49%);
   height: 100px;
-  
-  
 }
 #RelationshipInput{
   width: calc(49%);

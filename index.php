@@ -20,16 +20,9 @@ Purpose: This is the main index page, this is the home page in which all other p
     <h1> CIS375 Test Case Generator </h1>
     <h3> Created By: Nick Kessey - Colin McLaughlin - Walker Bass - Ryan Way</h3>
     <hr>
-    <div id="Instructions" >Instructions:</div>
+    <button onclick="window.location.href = 'Help_Info/help.html'">Help</button>
     <br>
-    <!-- This is description of the operation box, it will only appear once on the top left of the page-->
-    <p id="OperationInstruction">
-        Enter the name of your operation here. This will be what the Generator will use to create test cases.
-    </p>
-    <!-- This is the description of the Relationships, it will be located on the top right of the screen. -->
-    <p id="RelationshipInstruction">
-        Enter all of the Relationships the operation will have here. The connections across these relationships will generate the test cases.
-    </p>
+    <br>
     <table id="operationTable">
         <tr>
             <th style="width: 10%">Operation ID</th>
@@ -43,13 +36,25 @@ Purpose: This is the main index page, this is the home page in which all other p
         </tr>
 
     </table>
+
     <button onclick="addRow()" id="addRowButton">Add New Row</button>
     <button onclick="removeRow()" id="removeRowButton">Remove Bottom Row</button>
     <br><br>
-    <button onclick="generateTR()" id="generateTR">Generate Test Reports</button>
+    <input type="submit" onclick="generateTR()" id="generateTR" value="Generate Test Reports">
     <br><br>
+
     <hr>
-    <a href="test.php">Go To Test Page</a>
+
+    <table id="TestCaseTable">
+        <tr>
+            <th>Test Case ID</th>
+            <th>Test Case Name</th>
+            <th>Test Case Description</th>
+            <th>Relationships involved</th>
+        </tr>
+    </table>
+
+    <a href="Test_Environment/test.php">Go To Test Page</a>
   </body>
 </html>
 
