@@ -16,18 +16,8 @@ class Operation{
     return this.relationships[num];
   }
 };
-function createOperation(id, name, relationships){
-    let myOperation = new Operation(id, name, relationships);
-    console.log("Hello");
-    let tempID = myOperation.getID();
-    console.log(tempID);
-    
-    console.log(myOperation.getName());
-    for(i = 0; i < 3; i++){
-      console.log(myOperation.getRelationshipLoc(i));
-    }
+function generateTR(){
+    console.log("Generate TR Begin");
+
+    console.log("Generate TR End");
 }
-var name = "<?php echo $Input1 ?>";
-myArray = [1,2,3]
-console.log(name);
-createOperation(1, "Nick", myArray);

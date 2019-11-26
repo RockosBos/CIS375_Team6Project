@@ -12,6 +12,7 @@ Purpose: This is the main index page, this is the home page in which all other p
   <head>
     <link rel="stylesheet" type="text/css" href="./style.css">
     <script type="text/javascript" src="NewOperation.js"></script>
+    <script type="text/javascript" src="OperationClass.js"></script>
     <meta charset="utf-8">
     <title></title>
   </head>
@@ -29,7 +30,31 @@ Purpose: This is the main index page, this is the home page in which all other p
     <p id="RelationshipInstruction">
         Enter all of the Relationships the operation will have here. The connections across these relationships will generate the test cases.
     </p>
-    <form action="index.php" method="get">
+    <table id="operationTable">
+        <tr>
+            <th style="width: 10%">Operation ID</th>
+            <th style="width: 45%">Operation Name</th>
+            <th style="width: 45%">Relationship list</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><input type="text" name="inputOp" id='inputOp' style="width: calc(100% - 3px)"></td>
+            <td><input type="text" name="inputRel" id='inputRel'style="width: calc(100% - 3px)"></td>
+        </tr>
+
+    </table>
+    <button onclick="addRow()" id="addRowButton">Add New Row</button>
+    <button onclick="removeRow()" id="removeRowButton">Remove Bottom Row</button>
+    <br><br>
+    <button onclick="generateTR()" id="generateTR">Generate Test Reports</button>
+    <br><br>
+    <hr>
+    <a href="test.php">Go To Test Page</a>
+  </body>
+</html>
+
+<!--
+<form action="index.php" method="get">
       <div id="Inputs">
         <input type="text" name="Input1" id="OperationInput">
         <input type="text" name="Input2" id="RelationshipInput">
@@ -38,9 +63,5 @@ Purpose: This is the main index page, this is the home page in which all other p
       <br>
       <input type="submit" value="Generate Test Cases" id="TestCaseButton">
     </form>
-
-         <script src="OperationClass.js"></script>
-        <br><br>
-        <a href="index.php">Go To Test Page</a>
-  </body>
-</html>
+    <script src="OperationClass.js"></script>
+-->
