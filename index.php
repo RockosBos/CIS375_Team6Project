@@ -29,11 +29,6 @@ Purpose: This is the main index page, this is the home page in which all other p
             <th style="width: 45%">Operation Name</th>
             <th style="width: 45%">Relationship list</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td><input type="text" name="inputOp" id='inputOp' style="width: calc(100% - 3px)"></td>
-            <td><input type="text" name="inputRel" id='inputRel'style="width: calc(100% - 3px)"></td>
-        </tr>
 
     </table>
 

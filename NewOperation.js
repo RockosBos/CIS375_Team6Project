@@ -1,5 +1,5 @@
 //This page will be used to generate HTML and will work with both the Operation class and index files
-let i = 1;
+let i = 0;
 function addRow(){
     i++;
     console.log("Add new Row Begin");
