@@ -23,7 +23,7 @@ Purpose: This is the main index page, this is the home page in which all other p
     <button onclick="window.location.href = 'Help_Info/help.html'">Help</button>
     <br>
     <br>
-    <table id="operationTable">
+    <table id="operationTable"> <!-- This is the Operation/Relationships table, Whatever is inserted into this table will be stored in operation class array -->
         <tr>
             <th style="width: 10%">Operation ID</th>
             <th style="width: 45%">Operation Name</th>
@@ -49,7 +49,11 @@ Purpose: This is the main index page, this is the home page in which all other p
         </tr>
     </table>
 
+    <button onclick="getNumFromArray('12 5 13 -12')">Test parse input</button>
+
     <a href="Test_Environment/test.php">Go To Test Page</a>
+
+    <script>addRow()</script>
   </body>
 </html>
 
