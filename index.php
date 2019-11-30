@@ -49,8 +49,6 @@ Purpose: This is the main index page, this is the home page in which all other p
         </tr>
     </table>
 
-    <button onclick="getNumFromArray('12 5 13 -12')">Test parse input</button>
-
     <a href="Test_Environment/test.php">Go To Test Page</a>
 
     <script>addRow()</script>
