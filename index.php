@@ -18,7 +18,7 @@ Purpose: This is the main index page, this is the home page in which all other p
   </head>
   <body>
     <h1> CIS375 Test Case Generator </h1>
-    <h3> Created By: Nick Kessey - Colin McLaughlin - Walker Bass - Ryan Way</h3>
+    <h3> Created By: Nicholas Kessey - Colin McLaughlin - Walker Bass - Ryan Way</h3>
     <hr>
     <button onclick="window.location.href = 'Help_Info/help.html'">Help</button>
     <br>
@@ -38,6 +38,7 @@ Purpose: This is the main index page, this is the home page in which all other p
     <input type="submit" onclick="generateTR()" id="generateTR" value="Generate Test Reports">
     <br><br>
 
+    <p id="errText"></p>
     <hr>
 
     <table id="TestCaseTable">

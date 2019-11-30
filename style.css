@@ -63,3 +63,7 @@ td{
   border-collapse: collapse;
   
 }
+#errText{
+  color: red;
+  background: white;
+}

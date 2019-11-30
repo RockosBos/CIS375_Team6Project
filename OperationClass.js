@@ -34,8 +34,13 @@ function generateTR(){
         operationArray[num] = new Operation(Cells[0].innerHTML, Cells[1].children[0].value, getNumsFromString(Cells[2].children[0].value, num));
         
     }
-    
-    testOutputArray(operationArray);
+    while(TestCaseTable.rows.length > 1){
+      let table = document.getElementById("TestCaseTable");
+      table.deleteRow(-1);
+    }
+    for(c = 0; c < size; c++){
+      createTestCases(c);
+    }
     console.log("Generate TR End");
 }
 function getNumsFromString(inputString, rowNum){
@@ -49,6 +54,8 @@ function getNumsFromString(inputString, rowNum){
     let stringArray = [];
     let table = document.getElementById("operationTable");
     let size = table.rows.length - 1;
+    let e = document.createElement("errText");
+
     for(numl = 0; numl < splitString.length; numl++){
       if(!isNaN(splitString[numl])){
         splitString[numl] = parseInt(splitString[numl]);
@@ -57,12 +64,14 @@ function getNumsFromString(inputString, rowNum){
             console.log("Valid Location: " + splitString[numl]);
         }
         else{
-            console.log("Invalid relationship ID on line " + rowNum + ": " + splitString[numl]);
+          let t = document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, see HELP for input instructions";
+            //console.log("Invalid relationship ID on line " + rowNum + ": " + splitString[numl]);
             break;
         }
     }
     else{
-      console.log("Invalid Relationship input on line " + rowNum + ": " + splitString[numl]);
+      let t = document.getElementById("errText").innerHTML = "You have inserted an invalid input, please enter a series of numbers separated by a space. See HELP for input instructions";
+      //console.log("Invalid Relationship input on line " + rowNum + ": " + splitString[numl]);
       break;
     }
     }
@@ -74,10 +83,28 @@ function testOutputArray(array){
     This function is purely for test purposes, you input the input array and it will output all array elements to console.
   */
     for(numi = 0; numi < array.length; numi++){
-      console.log(array.length);
       console.log("ID: " + array[numi].operationID + " Name: " + array[numi].name + " Relationships: ");
         for(numj = 0; numj < array[numi].relationships.length; numj++){
             console.log(array[numi].relationships[numj]);
         }
     }
+}
+function createTestCases(rowNum){
+
+  let j = rowNum + 1;
+  let table = document.getElementById("TestCaseTable");
+  let row = TestCaseTable.insertRow(-1);
+
+  let col1 = row.insertCell(0);
+  let col2 = row.insertCell(1);
+  let col3 = row.insertCell(2);
+  let col4 = row.insertCell(3);
+
+  col1.innerHTML= i;
+  col2.innerHTML= "";
+  col3.innerHTML= "";
+  col4.innerHTML= "";
+  
+
+  console.log("Add new Row End");
 }
