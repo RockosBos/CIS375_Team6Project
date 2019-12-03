@@ -56,15 +56,3 @@ Purpose: This is the main index page, this is the home page in which all other p
   </body>
 </html>
 
-<!--
-<form action="index.php" method="get">
-      <div id="Inputs">
-        <input type="text" name="Input1" id="OperationInput">
-        <input type="text" name="Input2" id="RelationshipInput">
-      </div>
-      <button onclick="addRow()" id="AddRowButton">Add New Row</button>
-      <br>
-      <input type="submit" value="Generate Test Cases" id="TestCaseButton">
-    </form>
-    <script src="OperationClass.js"></script>
--->
