@@ -41,7 +41,7 @@ function generateTR(){
     t = 0;
     while(t < TestCaseTable.rows.length){
         c = 0;
-        while(c < operationArray[t].relationships.length){
+        while(c < operationArray[t].rel.length){
             createTestCases(t, operationArray, c);
             c++;
         }
@@ -82,10 +82,10 @@ function getNumsFromString(inputString, rowNum){
                 break;
             }
           }
-          else{
+        else{
               document.getElementById("errText").innerHTML = "You have inserted an invalid input, please enter a series of numbers separated by a space. See HELP for input instructions";
-             //console.log("Invalid Relationship input on line " + rowNum + ": " + splitString[numl]);
-             break;
+              //console.log("Invalid Relationship input on line " + rowNum + ": " + splitString[numl]);
+              break;
           }
         }
         //console.log("ParseRelationship End");
@@ -121,7 +121,7 @@ function createTestCases(rowNum, operationArray, rel){
 
   col1.innerHTML= j;
   col2.innerHTML= operationArray[rowNum].name + " and " + operationArray[rel].name + " have been executed successfully";
-  col3.innerHTML= "Operation " + operationArray[rowNum].operationID + " has successfully completed and called Operation " + operationArray[rel].operationID + " Correctly";
+  col3.innerHTML= "Operation " + j + " has not successfully completed and called Operation " + operationArray[rowNum].relationships[rel] + " Correctly";
   col4.innerHTML= j + " And " + operationArray[rowNum].relationships[rel];
 
 
