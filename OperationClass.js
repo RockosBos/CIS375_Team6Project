@@ -82,10 +82,10 @@ function getNumsFromString(inputString, rowNum){
                 break;
             }
           }
-          else{
+        else{
               document.getElementById("errText").innerHTML = "You have inserted an invalid input, please enter a series of numbers separated by a space. See HELP for input instructions";
-             //console.log("Invalid Relationship input on line " + rowNum + ": " + splitString[numl]);
-             break;
+              //console.log("Invalid Relationship input on line " + rowNum + ": " + splitString[numl]);
+              break;
           }
         }
         //console.log("ParseRelationship End");
@@ -119,9 +119,21 @@ function createTestCases(rowNum, operationArray, rel){
   let col3 = row.insertCell(2);
   let col4 = row.insertCell(3);
 
+<<<<<<< Updated upstream
   col1.innerHTML= TestCaseTable.rows.length - 1;
   col2.innerHTML= operationArray[rowNum].name + " and " + operationArray[rel + 1].name + " have been executed successfully";
   col3.innerHTML= "Operation " + operationArray[rowNum].operationID + " has successfully completed and called Operation " + operationArray[rel + 1].operationID + " Correctly";
+=======
+<<<<<<< HEAD
+  col1.innerHTML= TestCaseTable.rows.length - 1;
+  col2.innerHTML= operationArray[rowNum].name + " and " + operationArray[rel + 1].name + " have been executed successfully";
+  col3.innerHTML= "Operation " + operationArray[rowNum].operationID + " has successfully completed and called Operation " + operationArray[rel + 1].operationID + " Correctly";
+=======
+  col1.innerHTML= j;
+  col2.innerHTML= operationArray[rowNum].name + " and " + operationArray[rel].name + " have been executed successfully";
+  col3.innerHTML= "Operation " + j + " has successfully completed and called Operation " + operationArray[rowNum].relationships[rel] + " Correctly";
+>>>>>>> b3c1e9f4d120d40218ac2ec430d2f918a92b70e2
+>>>>>>> Stashed changes
   col4.innerHTML= j + " And " + operationArray[rowNum].relationships[rel];
 
 
