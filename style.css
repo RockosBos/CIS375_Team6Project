@@ -4,9 +4,10 @@ This is where all style elements for index.php will
 be located.
 */
 body{
-  background-image: url("pictures/generic-website-background.jpeg");
+  /*background-image: url("pictures/generic-website-background.jpeg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
+  background-color: lightgray;
   
 }
 h1{
@@ -16,7 +17,7 @@ h1{
 
 }
 h3{
-  color: red;
+  color: black;
   text-align: center;
   font-weight: bold;
   font: ariel;
@@ -68,5 +69,5 @@ td{
   background: white;
 }
 #TestCaseTable{
-  background: lightgreen;
+  background: white;
 }

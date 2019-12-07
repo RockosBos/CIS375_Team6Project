@@ -119,9 +119,9 @@ function createTestCases(rowNum, operationArray, rel){
   let col3 = row.insertCell(2);
   let col4 = row.insertCell(3);
 
-  col1.innerHTML= j;
-  col2.innerHTML= operationArray[rowNum].name + " and " + operationArray[rel].name + " have been executed successfully";
-  col3.innerHTML= "Operation " + operationArray[rowNum].operationID + " has successfully completed and called Operation " + operationArray[rel].operationID + " Correctly";
+  col1.innerHTML= TestCaseTable.rows.length - 1;
+  col2.innerHTML= operationArray[rowNum].name + " and " + operationArray[rel + 1].name + " have been executed successfully";
+  col3.innerHTML= "Operation " + operationArray[rowNum].operationID + " has successfully completed and called Operation " + operationArray[rel + 1].operationID + " Correctly";
   col4.innerHTML= j + " And " + operationArray[rowNum].relationships[rel];
 
 
