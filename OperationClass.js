@@ -41,7 +41,7 @@ function generateTR(){
     t = 0;
     while(t < TestCaseTable.rows.length){
         c = 0;
-        while(c < operationArray[t].rel.length){
+        while(c < operationArray[t].relationships.length){
             createTestCases(t, operationArray, c);
             c++;
         }
@@ -121,7 +121,7 @@ function createTestCases(rowNum, operationArray, rel){
 
   col1.innerHTML= j;
   col2.innerHTML= operationArray[rowNum].name + " and " + operationArray[rel].name + " have been executed successfully";
-  col3.innerHTML= "Operation " + j + " has not successfully completed and called Operation " + operationArray[rowNum].relationships[rel] + " Correctly";
+  col3.innerHTML= "Operation " + j + " has successfully completed and called Operation " + operationArray[rowNum].relationships[rel] + " Correctly";
   col4.innerHTML= j + " And " + operationArray[rowNum].relationships[rel];
 
 
