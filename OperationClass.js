@@ -38,14 +38,13 @@ function generateTR(){
       let table = document.getElementById("TestCaseTable");
       table.deleteRow(-1);
     }
-    t = 0;
-    while(t < TestCaseTable.rows.length){
-        c = 0;
-        while(c < operationArray[t].relationships.length){
+    
+    for(t = 0; t < operationArray.length; t++){
+        for(c = 0; c < operationArray[t].relationships.length; c++){
             createTestCases(t, operationArray, c);
-            c++;
+           
         }
-        t++;
+        
     }
 
     //testOutputArray(operationArray);
@@ -104,13 +103,14 @@ function testOutputArray(array){
     }
 
 }
-function createTestCases(rowNum, operationArray, rel){
+function createTestCases(rowNum, operationArray, relLoc){
 
   /*
     This function creates the rows for test cases. Each time it is run it adds a single new row based on the number input.
   */
 
   let j = rowNum + 1;
+  let rel = operationArray[rowNum].relationships[relLoc];
   let table = document.getElementById("TestCaseTable");
   let row = TestCaseTable.insertRow(-1);
 
@@ -119,10 +119,10 @@ function createTestCases(rowNum, operationArray, rel){
   let col3 = row.insertCell(2);
   let col4 = row.insertCell(3);
 
-  col1.innerHTML= j;
-  col2.innerHTML= operationArray[rowNum].name + " and " + operationArray[rel].name + " have been executed successfully";
-  col3.innerHTML= "Operation " + j + " has successfully completed and called Operation " + operationArray[rowNum].relationships[rel] + " Correctly";
-  col4.innerHTML= j + " And " + operationArray[rowNum].relationships[rel];
+  col1.innerHTML= TestCaseTable.rows.length;
+  col2.innerHTML= operationArray[rowNum].name + " and " + operationArray[rel - 1].name + " have been executed successfully";
+  col3.innerHTML= "Operation " + operationArray[rowNum].name + " has successfully completed and called Operation " + operationArray[rowNum].relationships[relLoc]  + " Correctly";
+  col4.innerHTML= j + " And " + rel;
 
 
   console.log("Add new Row End");
