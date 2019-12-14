@@ -20,7 +20,8 @@ Purpose: This is the main index page, this is the home page in which all other p
     <h1> CIS375 Test Case Generator </h1>
     <h3> Created By: Nicholas Kessey - Colin McLaughlin - Walker Bass - Ryan Way</h3>
     <hr>
-	<button onclick="window.location.href = 'Help_Info/help.html'">Help</button>
+	<a href="Help_Info/help.html"><button>Help</button></a>
+	<button style="float: right;" onclick="window.location.reload()">Reset Page</button>
     <br>
     <br>
     <center><table id="operationTable"> <!-- This is the Operation/Relationships table, Whatever is inserted into this table will be stored in operation class array -->
@@ -35,8 +36,6 @@ Purpose: This is the main index page, this is the home page in which all other p
     <button onclick="removeRow()" id="removeRowButton">Remove Bottom Row</button></center><br>
     <center><input type="submit" onclick="generateTR()" id="generateTR" value="Generate Test Reports"></center>
 	<br>
-	<center><input type="reset" value="Reset Page" onClick="window.location.reload()"></center>
-    <br>
     <p id="errText"></p>
     <hr>
 
