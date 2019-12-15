@@ -25,26 +25,34 @@ function generateTR(){
     //console.log("Generate TR Begin");
     let table = document.getElementById("operationTable");
     let size = table.rows.length - 1;
+    let errorFlag = false;
 
     let operationArray = [];
     for(num = 0; num < size; num++){
       //console.log(num + ":" + size);
         let currentRow = table.rows.item(num + 1);
         let Cells = currentRow.getElementsByTagName("td");
-        operationArray[num] = new Operation(Cells[0].innerHTML, Cells[1].children[0].value, getNumsFromString(Cells[2].children[0].value, num + 1));
-        //This is where our operation array is input. It takes the Id and Name directly and parses the relationship array
+        if(Cells[1].children[0].value != ""){
+            operationArray[num] = new Operation(Cells[0].innerHTML, Cells[1].children[0].value, getNumsFromString(Cells[2].children[0].value, num + 1));
+            //This is where our operation array is input. It takes the Id and Name directly and parses the relationship array
+        }
+        else{
+            let e = document.createElement("ErrText");
+            document.getElementById("errText").innerHTML = "All operations must have a name!";
+            errorFlag = true;
+        }
     }
     while(TestCaseTable.rows.length > 1){ //This clears all previous test report rows
       let table = document.getElementById("TestCaseTable");
       table.deleteRow(-1);
     }
-    
-    for(t = 0; t < operationArray.length; t++){
-        for(c = 0; c < operationArray[t].relationships.length; c++){
-            createTestCases(t, operationArray, c);
-           
-        }
+    if(!errorFlag){
+        for(t = 0; t < operationArray.length; t++){
+            for(c = 0; c < operationArray[t].relationships.length; c++){
+                createTestCases(t, operationArray, c);
+            }
         
+        }
     }
 
     //testOutputArray(operationArray);
@@ -77,12 +85,14 @@ function getNumsFromString(inputString, rowNum){
             }
             else{
                 document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, see HELP for input instructions";
+                
                 //console.log("Invalid relationship ID on line " + rowNum + ": " + splitString[numl]);
                 break;
             }
           }
         else{
               document.getElementById("errText").innerHTML = "You have inserted an invalid input, please enter a series of numbers separated by a space. See HELP for input instructions";
+              
               //console.log("Invalid Relationship input on line " + rowNum + ": " + splitString[numl]);
               break;
           }
