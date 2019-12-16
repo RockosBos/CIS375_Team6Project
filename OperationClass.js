@@ -84,7 +84,7 @@ function getNumsFromString(inputString, rowNum){
                 stringArray[numl] = splitString[numl];
             }
             else{
-                document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, A relationship also cannot be the same ID and the Operation ID, see HELP for input instructions";
+                document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, A relationship also cannot be the same ID as the Operation ID, see HELP for input instructions";
                 
                 //console.log("Invalid relationship ID on line " + rowNum + ": " + splitString[numl]);
                 break;
