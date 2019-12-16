@@ -40,7 +40,10 @@ function generateTR(){
             let e = document.createElement("ErrText");
             document.getElementById("errText").innerHTML = "All operations must have a name!";
             errorFlag = true;
-			throw new Error('This is not an error. This is just to abort javascript');
+			//throw new Error('This is not an error. This is just to abort javascript');
+        }
+        if(operationArray[num].relationships == -1){
+          break;
         }
     }
     while(TestCaseTable.rows.length > 1){ //This clears all previous test report rows
@@ -88,16 +91,17 @@ function getNumsFromString(inputString, rowNum){
             else{
                 if(inputString != ""){
                   document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, A relationship also cannot be the same ID and the Operation ID, see HELP for input instructions";
+                  return -1;
                 }
                 //console.log("Invalid relationship ID on line " + rowNum + ": " + splitString[numl]);
-				throw new Error('This is not an error. This is just to abort javascript');
+				//throw new Error('This is not an error. This is just to abort javascript');
             }
           }
         else{
               document.getElementById("errText").innerHTML = "You have inserted an invalid input, please enter a series of numbers separated by a space. See HELP for input instructions";
-              
+              return -1;
               //console.log("Invalid Relationship input on line " + rowNum + ": " + splitString[numl]);
-			  throw new Error('This is not an error. This is just to abort javascript');
+			  //throw new Error('This is not an error. This is just to abort javascript');
           }
         }
         //console.log("ParseRelationship End");
