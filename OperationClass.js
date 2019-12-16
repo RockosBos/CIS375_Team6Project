@@ -70,6 +70,8 @@ function getNumsFromString(inputString, rowNum){
     let table = document.getElementById("operationTable");
     let size = table.rows.length - 1;
     let e = document.createElement("errText");
+	
+	document.getElementById("errText").innerHTML = "";
 
     for(numl = 0; numl < splitString.length; numl++){
         if(!isNaN(splitString[numl])){
@@ -80,21 +82,20 @@ function getNumsFromString(inputString, rowNum){
         
         
             if(splitString[numl] <= size && splitString[numl] >= 1 && splitString[numl] != rowNum){
-                document.getElementById("errText").innerHTML = "";
                 stringArray[numl] = splitString[numl];
             }
             else{
                 document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, A relationship also cannot be the same ID as the Operation ID, see HELP for input instructions";
                 
                 //console.log("Invalid relationship ID on line " + rowNum + ": " + splitString[numl]);
-                break;
+                exit();
             }
           }
         else{
               document.getElementById("errText").innerHTML = "You have inserted an invalid input, please enter a series of numbers separated by a space. See HELP for input instructions";
               
               //console.log("Invalid Relationship input on line " + rowNum + ": " + splitString[numl]);
-              break;
+              exit();
           }
         }
         //console.log("ParseRelationship End");
