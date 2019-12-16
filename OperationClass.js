@@ -70,13 +70,7 @@ function getNumsFromString(inputString, rowNum){
     let table = document.getElementById("operationTable");
     let size = table.rows.length - 1;
     let e = document.createElement("errText");
-<<<<<<< HEAD
     
-=======
-	
-	document.getElementById("errText").innerHTML = "";
-
->>>>>>> 2125b25f1664af504143769a3e81f4579b622c50
     for(numl = 0; numl < splitString.length; numl++){
         if(!isNaN(splitString[numl])){
           
@@ -89,14 +83,9 @@ function getNumsFromString(inputString, rowNum){
                 stringArray[numl] = splitString[numl];
             }
             else{
-<<<<<<< HEAD
                 if(inputString != ""){
                   document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, A relationship also cannot be the same ID and the Operation ID, see HELP for input instructions";
                 }
-=======
-                document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, A relationship also cannot be the same ID as the Operation ID, see HELP for input instructions";
-                
->>>>>>> 2125b25f1664af504143769a3e81f4579b622c50
                 //console.log("Invalid relationship ID on line " + rowNum + ": " + splitString[numl]);
                 exit();
             }
