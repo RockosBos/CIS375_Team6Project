@@ -4,7 +4,12 @@ This is where all style elements for index.php will
 be located.
 */
 body{
+<<<<<<< Updated upstream
   /*background-image: url("pictures/generic-website-background.jpeg");
+=======
+  /*background-image: url("pictures/generic-website-background.jpeg");*/
+  background-color: lightgrey;
+>>>>>>> Stashed changes
   background-repeat: no-repeat;
   background-size: cover;*/
   background-color: lightgray;

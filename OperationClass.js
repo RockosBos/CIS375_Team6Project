@@ -31,8 +31,28 @@ function generateTR(){
       //console.log(num + ":" + size);
         let currentRow = table.rows.item(num + 1);
         let Cells = currentRow.getElementsByTagName("td");
+<<<<<<< Updated upstream
         operationArray[num] = new Operation(Cells[0].innerHTML, Cells[1].children[0].value, getNumsFromString(Cells[2].children[0].value, num + 1));
         //This is where our operation array is input. It takes the Id and Name directly and parses the relationship array
+=======
+        if(Cells[1].children[0].value != ""){
+            operationArray[num] = new Operation(Cells[0].innerHTML, Cells[1].children[0].value, getNumsFromString(Cells[2].children[0].value, num + 1));
+            //This is where our operation array is input. It takes the Id and Name directly and parses the relationship array
+        }
+        else{
+            let e = document.createElement("ErrText");
+            document.getElementById("errText").innerHTML = "All operations must have a name!";
+            errorFlag = true;
+			//throw new Error('This is not an error. This is just to abort javascript');
+        }
+        if(errorFlag){
+            break;
+        }
+        if(operationArray[num].relationships == -1){
+            break;
+            
+        }
+>>>>>>> Stashed changes
     }
     while(TestCaseTable.rows.length > 1){ //This clears all previous test report rows
       let table = document.getElementById("TestCaseTable");
