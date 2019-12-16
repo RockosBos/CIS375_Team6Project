@@ -40,6 +40,7 @@ function generateTR(){
             let e = document.createElement("ErrText");
             document.getElementById("errText").innerHTML = "All operations must have a name!";
             errorFlag = true;
+			break;
 			//throw new Error('This is not an error. This is just to abort javascript');
         }
         if(operationArray[num].relationships == -1){
