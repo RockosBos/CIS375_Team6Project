@@ -76,7 +76,7 @@ function getNumsFromString(inputString, rowNum){
           
             splitString[numl] = parseInt(splitString[numl]);
 
-            console.log("SplitString Loc: " + numl + " SplitString Value: " + splitString[numl] + "Rownum: " + rowNum + "Size: " + size);
+            //console.log("SplitString Loc: " + numl + " SplitString Value: " + splitString[numl] + "Rownum: " + rowNum + "Size: " + size);
         
         
             if(splitString[numl] <= size && splitString[numl] >= 1 && splitString[numl] != rowNum){
@@ -84,7 +84,7 @@ function getNumsFromString(inputString, rowNum){
                 stringArray[numl] = splitString[numl];
             }
             else{
-                document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, see HELP for input instructions";
+                document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, A relationship also cannot be the same ID and the Operation ID, see HELP for input instructions";
                 
                 //console.log("Invalid relationship ID on line " + rowNum + ": " + splitString[numl]);
                 break;
