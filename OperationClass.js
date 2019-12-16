@@ -70,7 +70,13 @@ function getNumsFromString(inputString, rowNum){
     let table = document.getElementById("operationTable");
     let size = table.rows.length - 1;
     let e = document.createElement("errText");
+<<<<<<< HEAD
     
+=======
+	
+	document.getElementById("errText").innerHTML = "";
+
+>>>>>>> 2125b25f1664af504143769a3e81f4579b622c50
     for(numl = 0; numl < splitString.length; numl++){
         if(!isNaN(splitString[numl])){
           
@@ -80,22 +86,26 @@ function getNumsFromString(inputString, rowNum){
         
         
             if(splitString[numl] <= size && splitString[numl] >= 1 && splitString[numl] != rowNum){
-                document.getElementById("errText").innerHTML = "";
                 stringArray[numl] = splitString[numl];
             }
             else{
+<<<<<<< HEAD
                 if(inputString != ""){
                   document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, A relationship also cannot be the same ID and the Operation ID, see HELP for input instructions";
                 }
+=======
+                document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, A relationship also cannot be the same ID as the Operation ID, see HELP for input instructions";
+                
+>>>>>>> 2125b25f1664af504143769a3e81f4579b622c50
                 //console.log("Invalid relationship ID on line " + rowNum + ": " + splitString[numl]);
-                break;
+                exit();
             }
           }
         else{
               document.getElementById("errText").innerHTML = "You have inserted an invalid input, please enter a series of numbers separated by a space. See HELP for input instructions";
               
               //console.log("Invalid Relationship input on line " + rowNum + ": " + splitString[numl]);
-              break;
+              exit();
           }
         }
         //console.log("ParseRelationship End");
@@ -130,11 +140,13 @@ function createTestCases(rowNum, operationArray, relLoc){
   let col2 = row.insertCell(1);
   let col3 = row.insertCell(2);
   let col4 = row.insertCell(3);
+  let col5 = row.insertCell(4);
 
   col1.innerHTML= TestCaseTable.rows.length - 1;
   col2.innerHTML= operationArray[rowNum].name + " and " + operationArray[rel - 1].name + " have been executed successfully";
   col3.innerHTML= "Operation " + operationArray[rowNum].name + " has successfully completed and called Operation " + operationArray[rowNum].relationships[relLoc]  + " Correctly";
   col4.innerHTML= j + " And " + rel;
+  col5.innerHTML= "<center><input type='text' id='F' name='Function1' size='4'></center>";
 
 
   console.log("Add new Row End");
