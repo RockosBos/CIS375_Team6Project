@@ -71,6 +71,8 @@ function getNumsFromString(inputString, rowNum){
     let size = table.rows.length - 1;
     let e = document.createElement("errText");
     
+	document.getElementById("errText").innerHTML = "";
+	
     for(numl = 0; numl < splitString.length; numl++){
         if(!isNaN(splitString[numl])){
           
