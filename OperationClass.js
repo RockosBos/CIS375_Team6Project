@@ -4,7 +4,7 @@ class Operation{
     this.operationID = id;  //Id number, automatically generated based on row
     this.name = name; //The text the user inputs into the "Operation Name" Column
     this.relationships = relationships; //Array of numeric inputs to form relationships
-    //console.log("Operation Created: " + id +" " + name + " " + relationships);
+    
   }
   getID(){
     return this.operationID;
@@ -22,14 +22,14 @@ function generateTR(){
         that will parse inputs and generate the Test report table. Currently It just loads the operation table information into the
         operation class array.
     */
-    //console.log("Generate TR Begin");
+    
     let table = document.getElementById("operationTable");
     let size = table.rows.length - 1;
     let errorFlag = false;
 
     let operationArray = [];
     for(num = 0; num < size; num++){
-      //console.log(num + ":" + size);
+      
         let currentRow = table.rows.item(num + 1);
         let Cells = currentRow.getElementsByTagName("td");
         if(Cells[1].children[0].value != ""){
@@ -40,8 +40,8 @@ function generateTR(){
             let e = document.createElement("ErrText");
             document.getElementById("errText").innerHTML = "All operations must have a name!";
             errorFlag = true;
-			break;
-			//throw new Error('This is not an error. This is just to abort javascript');
+			      break;
+			      
         }
         if(operationArray[num].relationships == -1){
           break;
@@ -60,8 +60,6 @@ function generateTR(){
         }
     }
 
-    //testOutputArray(operationArray);
-    //console.log("Generate TR End");
 }
 function getNumsFromString(inputString, rowNum){
   /*
@@ -69,23 +67,19 @@ function getNumsFromString(inputString, rowNum){
     number inputs in which we will use to generate relationships. The function currently does not work right and I
     Will fix later
   */
-    //console.log("ParseRelationship Start");
     let splitString = inputString.split(' ');
     let stringArray = [];
     let table = document.getElementById("operationTable");
     let size = table.rows.length - 1;
     let e = document.createElement("errText");
     
-	document.getElementById("errText").innerHTML = "";
+	  document.getElementById("errText").innerHTML = "";
 	
     for(numl = 0; numl < splitString.length; numl++){
         if(!isNaN(splitString[numl])){
           
             splitString[numl] = parseInt(splitString[numl]);
 
-            //console.log("SplitString Loc: " + numl + " SplitString Value: " + splitString[numl] + "Rownum: " + rowNum + "Size: " + size);
-        
-        
             if(splitString[numl] <= size && splitString[numl] >= 1 && splitString[numl] != rowNum){
                 stringArray[numl] = splitString[numl];
             }
@@ -94,20 +88,16 @@ function getNumsFromString(inputString, rowNum){
                   document.getElementById("errText").innerHTML = "You have inserted an invalid relationship ID, they must be between 0 and the largest ID you have created, A relationship also cannot be the same ID and the Operation ID, see HELP for input instructions";
                   return -1;
                 }
-                //console.log("Invalid relationship ID on line " + rowNum + ": " + splitString[numl]);
-				//throw new Error('This is not an error. This is just to abort javascript');
             }
-          }
+        }
         else{
               document.getElementById("errText").innerHTML = "You have inserted an invalid input, please enter a series of numbers separated by a space. See HELP for input instructions";
               return -1;
-              //console.log("Invalid Relationship input on line " + rowNum + ": " + splitString[numl]);
-			  //throw new Error('This is not an error. This is just to abort javascript');
-          }
-        }
-        //console.log("ParseRelationship End");
-        return stringArray;
+            }
     }
+        
+    return stringArray;
+}
 function testOutputArray(array){
   /*
     This function is purely for test purposes, you input the input array and it will output all array elements to console.
@@ -145,6 +135,4 @@ function createTestCases(rowNum, operationArray, relLoc){
   col4.innerHTML= j + " And " + rel;
   col5.innerHTML= "<center><input type='text' id='F' name='Function1' size='4'></center>";
 
-
-  console.log("Add new Row End");
 }
